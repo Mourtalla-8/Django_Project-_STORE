@@ -1,0 +1,22 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favoris</title>
+</head>
+<body>
+    <h1>Mes Favoris</h1>
+    <div>
+         Affichez la liste de produits favoris ici
+        {% for favorite in user_favorites %}
+            <div>
+                <img src="{{ favorite.shoe.image.url }}" alt="{{ favorite.shoe.name }}">
+                <h2>{{ favorite.shoe.name }}</h2>
+                <p>Couleurs disponibles : {{ favorite.shoe.colors }}</p>
+                <p>Prix : {{ favorite.shoe.price }} FCFA</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+-->

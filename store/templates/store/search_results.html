@@ -1,0 +1,23 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats de la recherche</title>
+</head>
+<body>
+    <h1>Résultats de la recherche pour "{{ query }}"</h1>
+    <div>
+         Affichez les résultats de la recherche ici
+        {% for shoe in results %}
+            <div>
+                <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+                <h2>{{ shoe.name }}</h2>
+                <p>{{ shoe.get_gender_display }}</p>
+                <p>Couleurs disponibles : {{ shoe.colors }}</p>
+                <p>Prix : {{ shoe.price }} FCFA</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+-->

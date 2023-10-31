@@ -1,0 +1,23 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nouveautés</title>
+</head>
+<body>
+    <h1>Nouveautés</h1>
+    <div>
+         Affichez la liste des produits les plus récents ici
+        {% for new_arrival in new_arrivals %}
+            <div>
+                <img src="{{ new_arrival.shoe.image.url }}" alt="{{ new_arrival.shoe.name }}">
+                <h2>{{ new_arrival.shoe.name }}</h2>
+                <p>{{ new_arrival.shoe.get_gender_display }}</p>
+                <p>Couleurs disponibles : {{ new_arrival.shoe.colors }}</p>
+                <p>Prix : {{ new_arrival.shoe.price }} FCFA</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+-->

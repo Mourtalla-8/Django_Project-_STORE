@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Détails du Produit</h1>
+    <div>
+
+        <h3>{{ shoe.shoe_type }}</h3>
+        <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}">
+        <h2>{{ shoe.name }}</h2>
+        <p>{{ shoe.get_gender_display }}</p>
+        <p>Couleurs disponibles : {{ shoe.get_colors_display }}</p>
+        <p>Stock : {{ shoe.stock }}</p>
+        <p>Prix : {{ shoe.price }} FCFA</p>
+
+        {% if user.is_authenticated %}
+        <p>
+            <a href="{% url 'add-to-cart' shoe.slug %}">
+                Ajouter au panier
+            </a>
+        </p>
+        {% endif %}
+
+        <p>{{ shoe.description }}</p>
+
+    </div>
+
+{% endblock %}

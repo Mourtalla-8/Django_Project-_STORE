@@ -11,12 +11,49 @@
     <title>Document</title>
     {% tailwind_preload_css %}
     {% tailwind_css %}
+
 </head>
 <body>
+    <header>
+        <div>
+            <a href="{% url 'index' %}">
+                <h1>Bienvenue sur Notre Site E-commerce</h1>
+            </a>
+        </div>
 
-{% block content %}
 
-{% endblock %}
+        {% if user.is_authenticated %}
+        <div>
+            <h2>{{ user.username }}</h2>
+            <a href="{% url 'logout' %}">Déconnexion</a>
+        </div>
 
+        {% else %}
+        <div>
+            <a href="{% url 'login' %}">Conexion</a>
+        </div>
+
+        <div>
+            <a href="{% url 'signup' %}">S'inscrire</a>
+        </div>
+        {% endif %}
+
+        {% if user.cart %}
+        <div>
+            <a href="{% url 'cart' %}">Voir le panier ({{ user.cart.orders.count }})</a>
+        </div>
+        {% endif %}
+
+    </header>
+    <main>
+        <div id="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        <!-- le code pour le pied de page ici (informations de contact, copyright, etc.) -->
+    </footer>
 </body>
 </html>
